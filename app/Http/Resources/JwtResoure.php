@@ -17,7 +17,8 @@ class JwtResoure extends JsonResource
         return [
             'access_token' => $this->resource,
             'token_type' => 'Bearer',
-            'expires_in' => auth()->factory()->getTTL() * 60
+            'expires_in' => auth()->factory()->getTTL() * 60,
+            'payload' => auth()->payload()
         ];
     }
 }
